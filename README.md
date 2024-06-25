@@ -99,7 +99,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="https://github.com/micheljwss">
-        <img src="https://avatars.githubusercontent.com/u/71086861?v=4" width="100px;" alt=""/><br>
         <sub>
           <b>Michel Soares</b>
         </sub>
