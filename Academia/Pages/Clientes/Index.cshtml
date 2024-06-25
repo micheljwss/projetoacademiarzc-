@@ -1,0 +1,103 @@
+﻿@page
+@model Academia.Pages.Clientes.IndexModel
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<partial name="_Breadcrumbs" />
+
+<div class="container-fluid py-5">
+    <p>
+        <a asp-page="Create">Adicionar</a>
+    </p>
+
+    <!-- Sistema de busca-->
+    <form method="get">
+        <div class="form-group">
+            <label for="searchCriteria" class="text-white">Escolha o critério:</label>
+            <select class="form-control" name="searchCriteria">
+                <option value="nome">Nome</option>
+                <option value="sobrenome">Sobrenome</option>
+                <option value="matricula">Matrícula</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="searchCriteria" class="text-white">Digite a informação a ser buscada:</label>
+            <input type="text" class="form-control" name="searchTerm" placeholder="Digite sua pesquisa">
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+        <a asp-page="Index" class="btn btn-secondary">Limpar</a>
+    </form>
+    <!-- Fimd o Sistema de busca-->
+
+    <br />
+
+    <div class="table-responsive">
+        <table class="table table-bordered bg-white table-responsive-lg m-0">
+            <thead>
+                <tr class="table-bordered">
+                    <th class="text-red">
+                        @Html.DisplayNameFor(model => model.Cliente[0].Matricula)
+                    </th>
+                    <th class="text-red">
+                        @Html.DisplayNameFor(model => model.Cliente[0].Nome)
+                    </th>
+                    <th class="text-red">
+                        @Html.DisplayNameFor(model => model.Cliente[0].Sobrenome)
+                    </th>
+                    <th class="text-red">
+                        @Html.DisplayNameFor(model => model.Cliente[0].Email)
+                    </th>
+                    <th class="text-red">
+                        @Html.DisplayNameFor(model => model.Cliente[0].Telefone)
+                    </th>
+                    <th class="text-red">
+                        @Html.DisplayNameFor(model => model.Cliente[0].FormaPagamento)
+                    </th>
+                    <th class="text-red">
+                        @Html.DisplayNameFor(model => model.Cliente[0].Personal)
+                    </th>
+                    <th class="text-red">
+                        Opções
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Cliente.OrderBy(c => c.Matricula))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Matricula)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sobrenome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FormaPagamento.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Personal.Nome)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Detalhes</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id">Apagar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+

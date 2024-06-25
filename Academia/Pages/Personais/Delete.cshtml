@@ -1,0 +1,48 @@
+﻿@page
+@model Academia.Pages.Personais.DeleteModel
+
+@{
+    ViewData["Title"] = "Apagar";
+}
+
+<partial name="_Breadcrumbs" />
+
+<div class="container py-5">
+    <h3>Você tem certeza que quer remover isto?</h3>
+    <div>
+        <h4>PERSONAL TRAINNER</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Personal.Nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Personal.Nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Personal.Sobrenome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Personal.Sobrenome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Personal.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Personal.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Personal.Telefone)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Personal.Telefone)
+            </dd>
+        </dl>
+
+        <form method="post">
+            <input type="hidden" asp-for="Personal.Id" />
+            <input type="submit" value="Apagar" class="btn btn-danger" /> |
+            <a asp-page="./Index">Voltar para a lista</a>
+        </form>
+    </div>
+</div>

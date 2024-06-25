@@ -1,0 +1,25 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Erro";
+}
+
+<partial name="_Breadcrumbs" />
+
+<h1 class="text-danger">Erro.</h1>
+<h2 class="text-danger">Ocorreu um erro ao processar a sua requisição.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>ID da requisição:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<h3>Modo de Desenvolvimento</h3>
+<p>
+    Alterando para o modo de <strong>Desenvolvimento</strong> você poderá obter mais detalhes sobre o erro que ocorreu.
+</p>
+<p>
+    <strong>O modo de Desenvolvimento não deve ser habilitado para ambiente de produção</strong>, já que ele pode revelar informações sensíveis através das mensagens de exception.
+</p>
