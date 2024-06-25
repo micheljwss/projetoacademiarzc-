@@ -58,7 +58,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'pi-academia'
+          app-name: 'projetoacademiarzc-'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8EFBADFCDF5C4FB1BAA2822E0EBA5E93 }}
           package: .

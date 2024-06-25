@@ -96,6 +96,14 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         </sub>
       </a>
     </td>
+    <td align="center">
+      <a href="https://github.com/micheljwss">
+        <img src="https://avatars.githubusercontent.com/u/127263716?v=4" width="100px;" alt="Foto do Soares"/><br>
+        <sub>
+          <b>Michel Soares</b>
+        </sub>
+      </a>
+    </td>    
   </tr>
 </table>
 
